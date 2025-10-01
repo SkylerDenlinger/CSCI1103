@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="FlowgorithmWk3"/>
+        <attribute name="authors" value="Skyle"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-09 07:48:46 PM"/>
+        <attribute name="created" value="U2t5bGU7U0tZTEVSOzIwMjUtMDktMDk7MDc6MzM6MDAgUE07MjI3OA=="/>
+        <attribute name="edited" value="U2t5bGU7U0tZTEVSOzIwMjUtMDktMDk7MDc6NDg6NDYgUE07MjsyNDAz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Skyler Denlinger (9/9/2025)&#13;&#10;This program takes two integers as input in the form of a driver's speed and the speed limit. It calculates the differential in speed and assigns and adequate fine if applicable"/>
+            <declare name="driverSpeed" type="Integer" array="False" size=""/>
+            <declare name="speedLimit" type="Integer" array="False" size=""/>
+            <declare name="fine" type="Integer" array="False" size=""/>
+            <assign variable="fine" expression="0"/>
+            <output expression="&quot;Enter a speed limit:&quot;" newline="True"/>
+            <input variable="speedLimit"/>
+            <output expression="&quot;Enter the driver's speed:&quot;" newline="True"/>
+            <input variable="driverSpeed"/>
+            <if expression="driverSpeed &gt; speedLimit &amp;&amp; driverSpeed - speedLimit &lt; 10">
+                <then>
+                    <assign variable="fine" expression="25"/>
+                </then>
+                <else>
+                    <if expression="driverSpeed &gt; speedLimit &amp;&amp; driverSpeed - speedLimit &lt; 20">
+                        <then>
+                            <assign variable="fine" expression="50"/>
+                        </then>
+                        <else>
+                            <if expression="driverSpeed &gt; speedLimit &amp;&amp; driverSpeed - speedLimit &lt; 30">
+                                <then>
+                                    <assign variable="fine" expression="100"/>
+                                </then>
+                                <else>
+                                    <if expression="driverSpeed &gt; speedLimit &amp;&amp; driverSpeed - speedLimit &lt; 40">
+                                        <then>
+                                            <assign variable="fine" expression="250"/>
+                                        </then>
+                                        <else>
+                                            <if expression="driverSpeed &gt; speedLimit &amp;&amp; driverSpeed - speedLimit &gt; 40">
+                                                <then>
+                                                    <assign variable="fine" expression="500"/>
+                                                </then>
+                                                <else/>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="driverSpeed &gt; speedLimit">
+                <then>
+                    <output expression="&quot;The fine for driving &quot; &amp; (driverSpeed - speedLimit) &amp; &quot;mph over the speed limit is $&quot; &amp; fine" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;You are driving under the speed limit and don't have to pay a fine!&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

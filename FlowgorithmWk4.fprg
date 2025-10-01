@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="FlowgorithmWk4"/>
+        <attribute name="authors" value="Skyle"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-15 03:34:12 PM"/>
+        <attribute name="created" value="U2t5bGU7U0tZTEVSOzIwMjUtMDktMTA7MTE6MTA6NTMgQU07MjI1Mw=="/>
+        <attribute name="edited" value="U2t5bGU7U0tZTEVSOzIwMjUtMDktMTU7MDM6MzQ6MTIgUE07MzsyMzg1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Skyler Denlinger (9/15/2025):&#13;&#10;This program calculates the total amount of money accrued by an Individual Retirement Account over a number of years. This program assumes a constant yearly investment and interest rate."/>
+            <declare name="interestRate, contribution, previousYear" type="Real" array="False" size=""/>
+            <declare name="i, years" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter # of Years for IRA:&quot;" newline="True"/>
+            <input variable="years"/>
+            <output expression="&quot;Enter interest rate:&quot;" newline="True"/>
+            <input variable="interestRate"/>
+            <output expression="&quot;Enter annual contribution:&quot;" newline="True"/>
+            <input variable="contribution"/>
+            <assign variable="previousYear" expression="0"/>
+            <for variable="i" start="1" end="years" direction="inc" step="1">
+                <output expression="&quot;Year &quot; &amp; i &amp; &quot; total: &quot; &amp; ToFixed(((contribution + previousYear) * (1 + interestRate * .01)), 2)" newline="True"/>
+                <assign variable="previousYear" expression="(contribution + previousYear) * (1 + interestRate * .01)"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

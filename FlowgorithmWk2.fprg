@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="FlowgorithmWk2"/>
+        <attribute name="authors" value="Skyle"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-09-09 07:25:30 PM"/>
+        <attribute name="created" value="U2t5bGU7U0tZTEVSOzIwMjUtMDktMDk7MDY6NDQ6MDggUE07MjI4Nw=="/>
+        <attribute name="edited" value="U2t5bGU7U0tZTEVSOzIwMjUtMDktMDk7MDc6MjU6MzAgUE07NDsyMzkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Skyler Denlinger (9/9/2025):&#13;&#10;This program calculates how long a year on other planets are relative to a year on earth."/>
+            <declare name="nameOfPlanet" type="String" array="False" size=""/>
+            <declare name="distanceFromSun" type="Real" array="False" size=""/>
+            <declare name="preoutput" type="Real" array="False" size=""/>
+            <declare name="planetYears" type="Real" array="False" size=""/>
+            <output expression="&quot;Input the name of a planet&quot;" newline="True"/>
+            <input variable="nameOfPlanet"/>
+            <output expression="&quot;Input the distance from the sun (in AU)&quot;" newline="True"/>
+            <input variable="distanceFromSun"/>
+            <assign variable="preoutput" expression="distanceFromSun * distanceFromSun * distanceFromSun"/>
+            <assign variable="planetYears" expression="sqrt(preoutput)"/>
+            <output expression="&quot;A year on the planet &quot; &amp; nameOfPlanet &amp; &quot; equals &quot; &amp; planetYears &amp; &quot; earth years.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
